@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AirSense - Smart Indoor Air Quality Monitoring</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="logo-container">
+            <div class="logo-wrapper">
+                <img src="logo.jpg" alt="AirGuard Logo" class="logo">
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="home2.html">Home</a>
+            <a href="dashboard.html" class="active">Dashboard</a>
+            <a href="comparison.html">Comparison</a>
+        </div>
+        <div class="auth-buttons">
+            <a href="home1.html"><button class="btn btn-log-out">Log Out</button></a>
+        </div>
+    </nav>
+
+    <div class="user-info-banner">
+        <div class="user-info-wrapper">
+            <div class="user-greeting">
+                Hi, <span id="username-display"></span>!
+            </div>
+            <div class="location-info">
+                Location: <span id="current-location-display"></span>
+            </div>
+        </div>
+    </div>
+
+    <header class="welcome-section">
+        <h1>Welcome to the Smart Indoor Air Quality Monitoring System</h1>
+        <p class="subtitle">Track, analyze, and improve indoor air quality with ease</p>
+    </header>
+
+    <main class="container">
+        <div class="quality-scale-card">
+            <h2>Air Quality Scale</h2>
+            <div class="scale-bar"></div>
+            <div class="scale-labels">
+                <span>Good</span>
+                <span>Moderate</span>
+                <span>Poor</span>
+            </div>
+        </div>
+            
+       
+        <div class="metrics-grid">
+        </div>
+
+        <div class="trends-section">
+            <div class="trends-header">
+                <h2>Historical Data</h2>
+                <div class="trends-controls">
+                    <select id="metricSelect" class="control-input">
+                        <option value="Temperature">Temperature</option>
+                        <option value="Humidity">Humidity</option>
+                        <option value="PM2.5">PM2.5</option>
+                        <option value="PM10">PM10</option>
+                        <option value="Nitrogen Dioxide (NO2)">Nitrogen Dioxide (NO₂)</option>
+                        <option value="Ozone (O3)">Ozone (O₃)</option>
+                        <option value="CO2 Level">CO₂</option>
+                        <option value="Pressure">Pressure</option>
+                        <option value="Gas Resistance">Gas Resistance</option>
+                    </select>
+                    <input type="date" id="dateFrom" class="control-input">
+                    <input type="date" id="dateTo" class="control-input">
+                    <button id="updateChart" class="btn btn-primary">Update</button>
+                </div>
+            </div>
+            <div class="chart-container">
+                <canvas id="trendsChart"></canvas>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Meridian Innovators. All Rights Reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="footer-social-icons">
+            <a href="#"><img src="fb.avif" alt="Facebook"></a>
+            <a href="#"><img src="twitter.webp" alt="Twitter"></a>
+            <a href="#"><img src="linkedin.webp" alt="LinkedIn"></a>
+        </div>
+    </footer>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

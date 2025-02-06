@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AirSense - Smart Indoor Air Quality Monitoring</title>
+    <link rel="stylesheet" href="comparison.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="logo-container">
+            <div class="logo-wrapper">
+                <img src="logo.jpg" alt="AirGuard Logo" class="logo">
+                
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="home2.html">Home</a>
+            <a href="dashboard.html" >Dashboard</a>
+            <a href="comparison.html" class="active">Comparison</a>
+            
+        </div>
+        <div class="auth-buttons">
+            
+            <a href="home1.html"><button class="btn btn-log-out">Log Out</button></a>
+        </div>
+    </nav>
+
+    <div class="user-info-banner">
+        <div class="user-info-wrapper">
+            <div class="user-greeting">
+                Hi, <span id="username-display"></span>!
+            </div>
+            <div class="location-info">
+                Location: <span id="current-location-display"></span>
+            </div>
+        </div>
+    </div>
+
+    <header class="welcome-section">
+        <h1>Welcome to the Smart Indoor Air Quality Monitoring System</h1>
+        <p class="subtitle">Track, analyze, and improve indoor air quality with ease</p>
+    </header>
+
+    <main class="container">
+        <h2>Select your Locations</h2>
+        
+        <div id="validation-message" class="validation-message"></div>
+        
+        <div class="comparison-grid">
+            <div class="location-card">
+                <h3>Location 1</h3>
+                <select id="location1" class="location-select">
+                    <option value="">Select Location</option>
+                    <option value="lectureHall">Lecture Hall</option>
+                    <option value="Office">Dean's Office</option>
+                    <option value="Basement">Basement</option>
+                    <option value="electronicLab">Lab</option>
+                </select>
+                
+                <div class="date-picker">
+                    <label>Date:</label>
+                    <input type="date" id="date1">
+                </div>
+                
+                <div class="metrics-select">
+                    <label>Metrics:</label>
+                    <select id="metrics1">
+                        <option value="Temperature">Temperature</option>
+                        <option value="Humidity">Humidity</option>
+                        <option value="PM2.5">PM2.5</option>
+                        <option value="PM10">PM10</option>
+                        <option value="CO2 Level">Carbon Dioxide CO₂</option>
+                        <option value="Gas Resistance">Gas Resistance</option>
+                        <option value="Pressure">Pressure</option>
+                        <option value="Nitrogen Dioxide (NO2)">Nitrogen Dioxide (NO2)</option>
+                        <option value="Ozone (O3)">Ozone (O3)</option>
+                    </select>
+                </div>
+
+                <div class="gauge-container">
+                    <canvas id="gauge1"></canvas>
+                    <div id="gauge1-value" class="value-display">--</div>
+                </div>
+                
+                <div class="status" id="status1">Select location to view data</div>
+                <div class="legend">
+                    <span class="legend-item"><span class="dot good"></span> Good</span>
+                    <span class="legend-item"><span class="dot moderate"></span> Moderate</span>
+                    <span class="legend-item"><span class="dot poor"></span> Poor</span>
+                </div>
+            </div>
+
+            <div class="location-card">
+                <h3>Location 2</h3>
+                <select id="location2" class="location-select">
+                    <option value="">Select Location</option>
+                    <option value="lectureHall">Lecture Hall</option>
+                    <option value="Office">Dean's Office</option>
+                    <option value="Basement">Basement</option>
+                    <option value="electronicLab">Lab</option>
+                </select>
+                
+                <div class="date-picker">
+                    <label>Date:</label>
+                    <input type="date" id="date2">
+                </div>
+                
+                <div class="metrics-select">
+                    <label>Metrics:</label>
+                    <select id="metrics2">
+                        <option value="Temperature">Temperature</option>
+                        <option value="Humidity">Humidity</option>
+                        <option value="PM2.5">PM2.5</option>
+                        <option value="PM10">PM10</option>
+                        <option value="CO2 Level">Carbon Dioxide CO₂</option>
+                        <option value="Gas Resistance">Gas Resistance</option>
+                        <option value="Pressure">Pressure</option>
+                        <option value="Nitrogen Dioxide (NO2)">Nitrogen Dioxide (NO2)</option>
+                        <option value="Ozone (O3)">Ozone (O3)</option>
+
+                    </select>
+                </div>
+
+                <div class="gauge-container">
+                    <canvas id="gauge2"></canvas>
+                    <div id="gauge2-value" class="value-display">--</div>
+                </div>
+                
+                <div class="status" id="status2">Select location to view data</div>
+                <div class="legend">
+                    <span class="legend-item"><span class="dot good"></span> Good</span>
+                    <span class="legend-item"><span class="dot moderate"></span> Moderate</span>
+                    <span class="legend-item"><span class="dot poor"></span> Poor</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="chart-error" class="chart-error"></div>
+
+        <div class="comparison-summary">
+            <h3>Comparison Summary</h3>
+            <div id="comparison-text" class="comparison-text">
+                Select locations and metrics to view comparison
+            </div>
+        </div>
+
+        <div class="daily-distribution">
+            <h3>Daily Distribution</h3>
+            <div class="chart-container">
+                <canvas id="distributionChart"></canvas>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Meridian Innovators. All Rights Reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="footer-social-icons">
+            <a href="#"><img src="fb.avif" alt="Facebook"></a>
+            <a href="#"><img src="twitter.webp" alt="Twitter"></a>
+            <a href="#"><img src="linkedin.webp" alt="LinkedIn"></a>
+        </div>
+    </footer>
+
+    <script src="comparison.js"></script>
+</body>
+</html>
